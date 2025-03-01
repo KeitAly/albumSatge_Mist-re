@@ -49,9 +49,9 @@ class AlbumController extends Controller
          try{
             $album=Album::findOrFail($request['id']);
             $album->update($request->all());
-            return $album;
+            return response()->json(["code"=>200],200);
         }catch(Exception $e){
-            return $e;
+            return response()->json(["code"=>500],200);
         }
     }
 

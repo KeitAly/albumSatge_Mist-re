@@ -21,5 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('listAlbum', [AlbumController::class,'listAlbum']);
 Route::post('creationAlbum',[AlbumController::class,'creationAlbum']);
-Route::put('modificationAlbum',[AlbumController::class,'modificationAlbum']);
+Route::post('modificationAlbum',[AlbumController::class,'modificationAlbum']);
 Route::post('suppressionAlbum',[AlbumController::class,'suppressionAlbum'] );
