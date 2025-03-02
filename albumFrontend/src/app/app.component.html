@@ -1,0 +1,8 @@
+
+
+<div class="addAllbum">
+  <img src="../../image/ajout.png" alt="" (click)="test(0)" width="40px" height="40px"  *ngIf="!creation">
+
+  <img src="../../image/ajout.png" alt="" (click)="test(1)" width="40px" height="40px" *ngIf="creation"> </div>
+<app-cration-album *ngIf="creation"></app-cration-album>
+<app-crud-album *ngIf="!creation"></app-crud-album>

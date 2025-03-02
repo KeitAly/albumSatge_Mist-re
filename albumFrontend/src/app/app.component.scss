@@ -1,0 +1,13 @@
+.addAllbum{
+  position: fixed;
+  height: 500px;
+  top: 2%;
+  left: 2%;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+
+ }
+.addAllbum:hover{
+  cursor: pointer;
+}

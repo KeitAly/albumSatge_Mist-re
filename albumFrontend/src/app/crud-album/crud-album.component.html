@@ -1,0 +1,25 @@
+<!-- bar de recherche -->
+<div id="recherche">
+  <input type="text" name="" id="rechercheInput">
+  <button id="rechercheBtn"><img src="../../image/loupe.png"  height="100%"> </button>
+</div>
+<div id="contenaiCrud">
+   <img src="../../image/save.png" class="imgGrud" alt="" (click)="update()" width="18px" >
+  <img src="../../image/delete.png" class="imgGrud" alt="" (click)="delete()" width="18px"  >
+</div>
+<div id="menu">
+  <!-- liste des album-->
+  <div id="liste_album">
+    <ul *ngIf="data" >
+      <li *ngFor="let album  of data">
+        <div class="listes" id={{album.id}} (click)="focus($event,album.id)"  (dblclick)="focus($event,album.id)"  class="contenuAlbum">
+           <input type="text" value={{album.nom}}   class="contenu curseur">
+           <input type="text"  value={{album.prenom}}  class="contenu curseur ">
+           <input type="text"  value={{album.titre}}  class="contenu curseur ">
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
