@@ -1,11 +1,17 @@
 <!-- bar de recherche -->
+
 <div id="recherche">
   <input type="text" name="" id="rechercheInput">
   <button id="rechercheBtn"><img src="../../image/loupe.png"  height="100%"> </button>
 </div>
-<div id="contenaiCrud">
-   <img src="../../image/save.png" class="imgGrud" alt="" (click)="update()" width="18px" >
-  <img src="../../image/delete.png" class="imgGrud" alt="" (click)="delete()" width="18px"  >
+<div id="contenaiCrud" >
+  <div *ngIf="!chargement">
+    <img src="../../image/save.png" class="imgGrud" alt="" (click)="update()" width="18px" >
+    <img src="../../image/delete.png" class="imgGrud" alt="" (click)="delete()" width="18px"  >
+  </div>
+  <mat-spinner *ngIf="chargement" diameter="25" style="justify-self: center;" ></mat-spinner>
+
+
 </div>
 <div id="menu">
   <!-- liste des album-->
