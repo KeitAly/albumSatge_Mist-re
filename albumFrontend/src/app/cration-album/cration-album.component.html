@@ -7,7 +7,10 @@
     <input type="text"  [(ngModel)]="prenom" placeholder="Aly" />
     <label>TITRE</label>
     <input type="text" [(ngModel)]="titre"  placeholder="les frasques d'ébinto" />
-    <button type="submit" id="enregistrer" (click)="enregistrer()" >enregistrer</button>
+    <button type="submit" id="enregistrer" [disabled]="chargement" (click)="enregistrer()" >
+       <span *ngIf="!chargement">enregistrer </span>
+       <mat-spinner *ngIf="chargement" diameter="25" style="justify-self: center;align-self: center;" ></mat-spinner>
+    </button>
 
   </div>
 

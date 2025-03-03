@@ -27,21 +27,24 @@ li:hover {
 
 #menu{
   position: relative;
-  background-color: rgb(255, 255, 255);
-  height: 80%;
-  width: 80%;
+  background-color: #ecf0f3;
+  height: 60%;
+  width: 60%;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 
 #liste_album{
-  height: 90%;
+  height: 100%;
   width: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #recherche{
  display: flex;
+ position: fixed;
+ top: 5%;
  justify-content: center;
  align-items: center;
   width: 80%;
@@ -54,6 +57,7 @@ li:hover {
 }
 
 #rechercheBtn{
+
   height: 45%;
   width: 5%;
 }
@@ -66,7 +70,7 @@ li{
   width: 100%;
    height: 50px;
   list-style: none;
-  background-color: rgb(235, 222, 222);
+  background-color: #ecf0f3;
   border: none;
   margin: 1%;
 
@@ -76,7 +80,7 @@ li{
 
 .contenu{
   border: none;
-  background-color: rgb(235, 222, 222);
+  background-color: #ecf0f3;
   width: 100%;
   font-size: large;
   padding-left: 1%;
@@ -88,7 +92,7 @@ li{
   height: 99%;
   flex-direction: row;
   border:none;
-  background-color: rgb(235, 222, 222);
+  background-color: #ecf0f3;
 }
 
 
@@ -96,7 +100,7 @@ li{
   position: relative;
   left: 0%;
 
-  width:80%;
+  width:60%;
 }
 .imgGrud{
   margin: 2px;
