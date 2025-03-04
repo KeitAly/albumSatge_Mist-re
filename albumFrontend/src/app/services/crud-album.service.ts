@@ -33,4 +33,10 @@ export class CrudAlbumService {
     data.append('titre',titre)
     return this.httpclient.post('http://localhost:8000/api/modificationAlbum',data);
    }
+   recherche(sujet:string):Observable<any>{
+    var data = new FormData
+    data.append('sujet',sujet)
+    return this.httpclient.post('http://localhost:8000/api/recherche',data)
+   }
+
 }

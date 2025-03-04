@@ -23,3 +23,4 @@ Route::get('listAlbum', [AlbumController::class,'listAlbum']);
 Route::post('creationAlbum',[AlbumController::class,'creationAlbum']);
 Route::post('modificationAlbum',[AlbumController::class,'modificationAlbum']);
 Route::post('suppressionAlbum',[AlbumController::class,'suppressionAlbum'] );
+Route::post('recherche',[AlbumController::class,'recherche']);

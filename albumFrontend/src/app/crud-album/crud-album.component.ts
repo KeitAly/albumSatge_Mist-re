@@ -39,8 +39,6 @@ toastFunc(message:string){
     horizontalPosition:'center'
   })
 }
-
-
 // fonction de recupération des element html
 
 recuperationToutAlbum(){
@@ -138,8 +136,8 @@ focus(event:MouseEvent,id:any){
   }
 
 
-  //verification un  changement a été effectué
-  if(this.last_id!=""){
+  //verification un  changement a été effectué ou -1 si la ligne a été supprimé
+  if(this.last_id!="" && this.last_id !="-1"){
     this.recuperationLastLigne(this.last_id)
 
     if(this.info[0]!=this.lastinfo[0] || this.info[1]!=this.lastinfo[1] ||this.info[2]!=this.lastinfo[2])
@@ -158,7 +156,7 @@ focus(event:MouseEvent,id:any){
 
   this.recuperationLastLigne(this.last_id)
 
-  if(this.changed && id != this.last_id)
+  if(this.changed && id != this.last_id &&this.last_id !="-1")
   {
    // ouverture de la boite de dialogue ,choix entre abandonné ou enregistré la modification
      this.openDialog(this.last_id,id)
@@ -191,12 +189,14 @@ this.crudalbumservice.supprimerAlbum(this.id).subscribe((data)=>{
     document.getElementById(this.id)?.parentElement?.remove()
     this.chargement=false
     this.toastFunc("supprimé avec succes")
-
+    this.changed=false
+    this.last_id="-1"
   }else
   {   this.chargement=false
     this.toastFunc("erreur lors de la tentative de supprission")
   }
 })
+this.info=[]
 }
 
 //function de mise a jour d'un album
@@ -231,6 +231,18 @@ update(){
             }
       }
   this.info=[]
+}
+
+
+// fonction de recherche
+recherche(){
+
+  const value=document.getElementById('rechercheInput') as HTMLInputElement
+  this.crudalbumservice.recherche(value.value).subscribe((data:any)=>{
+    if(data){
+      this.data=data['data']
+    }
+  })
 }
 
 }

@@ -1,8 +1,11 @@
 <!-- bar de recherche -->
 
 <div id="recherche">
-  <input type="text" name="" id="rechercheInput">
-  <button id="rechercheBtn"><img src="../../image/loupe.png"  height="100%"> </button>
+ <div id="rechercheContent">
+  <input type="text" name="" class="contenu" id="rechercheInput">
+  <button class="rechercheBtn" (click)="recherche()"> </button>
+  <button class="rechercheBtn" (click)="recherche()"><img src="../../image/loupe.png"  height="80%"> </button>
+</div>
 </div>
 <div id="contenaiCrud" >
   <div *ngIf="!chargement">

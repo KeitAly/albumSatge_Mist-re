@@ -14,7 +14,7 @@ class AlbumController extends Controller
      */
     public function listAlbum()
     {
-        return Album::all();
+        return Album::orderBy('created_at','desc')->get();
     }
 
     /**
@@ -68,4 +68,15 @@ class AlbumController extends Controller
         return response()->json(["code"=>400],200);
       }
     }
+ public function recherche(Request $request){
+  try{
+    $result=Album::whereAny(['nom','prenom','titre'],'like','%'.$request->sujet.'%')
+    ->orderBy('created_at','desc')
+    ->get();
+    return response()->json(["code"=>200,"data"=>$result],200);
+  } catch(Exception $e){
+    return response()->json(["code"=>500],200);
+  }
+
+ }
 }
