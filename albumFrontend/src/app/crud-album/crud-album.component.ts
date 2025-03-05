@@ -26,6 +26,7 @@ changed:Boolean=false
 chargement:Boolean=false
 firstcontent:any[]=[]
 valider=false;
+updated=false;
 ngOnInit(){
 this.recuperationToutAlbum()
 }
@@ -136,14 +137,19 @@ focus(event:MouseEvent,id:any){
   }
 
 
-  //verification un  changement a été effectué ou -1 si la ligne a été supprimé
+  //verification  un changement a été effectué ou -1 si la ligne a été supprimé ou mise a jours
   if(this.last_id!="" && this.last_id !="-1"){
     this.recuperationLastLigne(this.last_id)
 
     if(this.info[0]!=this.lastinfo[0] || this.info[1]!=this.lastinfo[1] ||this.info[2]!=this.lastinfo[2])
     {
      // ouverture de la boite de dialogue ,choix entre abandonné ou enregistré la modification
-     this.changed=true
+     if(this.updated){
+        this.updated=false
+     }else{
+      this.changed=true
+     }
+
     }
 
   }
@@ -231,6 +237,7 @@ update(){
             }
       }
   this.info=[]
+  this.updated=true
 }
 
 
